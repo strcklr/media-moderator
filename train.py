@@ -8,7 +8,7 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
 
-def main():
+def train():
     if not os.path.isdir("checkpoints"):
         os.mkdir("checkpoints")
 
@@ -134,5 +134,4 @@ def show_plot(accuracy, val_acc, val_loss, loss, epochs_range):
     plt.savefig("training_and_validation_loss.png")
 
 
-if __name__ == '__main__':
-    main()
+train()
