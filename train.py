@@ -12,7 +12,7 @@ def train():
     if not os.path.isdir("checkpoints"):
         os.mkdir("checkpoints")
 
-    data = DataHolder('/Users/chase/Documents/Repositories/nsfw_data_scraper/data/train')
+    data = DataHolder('train')
 
     batch_size = 32
     img_height = 180
@@ -130,8 +130,8 @@ def show_plot(accuracy, val_acc, val_loss, loss, epochs_range):
     plt.plot(epochs_range, loss, label="Training Loss")
     plt.plot(epochs_range, val_loss, label="Validation Loss")
     plt.title("Training and Validation Loss")
-    plt.show()
-    plt.savefig("training_and_validation_loss.png")
+    # plt.show()
+    plt.savefig("accuracy_graph.png")
 
 
 train()
