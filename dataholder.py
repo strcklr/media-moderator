@@ -1,5 +1,7 @@
 import pathlib
 
+CLASS_NAMES = ["hentai", "porn", "neutral"]
+CLASS_NAMES.sort()  # Alphabetical
 
 class DataHolder:
     root = None
