@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-
+import tensorflow_datasets as tfds
 from dataholder import DataHolder
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
@@ -13,6 +13,17 @@ def train():
         os.mkdir("checkpoints")
 
     data = DataHolder('train')
+
+    (ds_train, ds_test), metadata = tfds.load(
+        "gs://content_moderator_db/data/train",
+        split=["train", "test"],
+        shuffle_files=True,
+        with_info=True,
+        as_supervised=True,
+    )
+
+    classes = metadata.features["label"].num_classes
+    print("Number of classes: %d" % classes)
 
     batch_size = 32
     img_height = 180
