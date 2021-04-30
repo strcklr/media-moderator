@@ -1,4 +1,5 @@
 import tensorflow as tf
+import tensorflow_datasets as tfds
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -12,7 +13,13 @@ def train():
     if not os.path.isdir("checkpoints"):
         os.mkdir("checkpoints")
 
-    data = DataHolder('train')
+    # data = DataHolder('train')
+
+    (ds_train, ds_test), metadata = tfds.load(name="mnist", split=["train", "test"], data_dir="gs://content_moderator_db")
+
+    classes = metadata.features["label"].num_classes
+    print("Num classes %d" % classes)
+    return
 
     batch_size = 32
     img_height = 180
