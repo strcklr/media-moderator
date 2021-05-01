@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/media-moderator/static/css/main.2adffb7d.chunk.css",
+    "main.js": "/media-moderator/static/js/main.9d969123.chunk.js",
+    "main.js.map": "/media-moderator/static/js/main.9d969123.chunk.js.map",
+    "runtime-main.js": "/media-moderator/static/js/runtime-main.d7808fda.js",
+    "runtime-main.js.map": "/media-moderator/static/js/runtime-main.d7808fda.js.map",
+    "static/js/2.6c78af6f.chunk.js": "/media-moderator/static/js/2.6c78af6f.chunk.js",
+    "static/js/2.6c78af6f.chunk.js.map": "/media-moderator/static/js/2.6c78af6f.chunk.js.map",
+    "static/js/3.08168770.chunk.js": "/media-moderator/static/js/3.08168770.chunk.js",
+    "static/js/3.08168770.chunk.js.map": "/media-moderator/static/js/3.08168770.chunk.js.map",
+    "index.html": "/media-moderator/index.html",
+    "static/css/main.2adffb7d.chunk.css.map": "/media-moderator/static/css/main.2adffb7d.chunk.css.map",
+    "static/js/2.6c78af6f.chunk.js.LICENSE.txt": "/media-moderator/static/js/2.6c78af6f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/media-moderator/static/media/OpenSans-Regular.1b0809d5.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d7808fda.js",
+    "static/js/2.6c78af6f.chunk.js",
+    "static/css/main.2adffb7d.chunk.css",
+    "static/js/main.9d969123.chunk.js"
+  ]
+}
