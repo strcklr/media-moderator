@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Tensorflow
-checkpoints/
-model/
+python/checkpoints/
+python/model/
