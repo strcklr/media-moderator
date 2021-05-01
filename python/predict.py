@@ -3,13 +3,13 @@ import time
 import numpy as np
 import tensorflow as tf
 import cv2
-import dataholder as data
+from python import dataholder as data
 from collections import deque
 from tensorflow import keras
 
 img_height = 180
 img_width = 180
-model = keras.models.load_model("model")
+model = keras.models.load_model("../model")
 contextual_labels = {}
 
 

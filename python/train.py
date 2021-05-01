@@ -3,14 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-from dataholder import DataHolder
+from python.dataholder import DataHolder
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
 
 def train():
-    if not os.path.isdir("checkpoints"):
-        os.mkdir("checkpoints")
+    if not os.path.isdir("../checkpoints"):
+        os.mkdir("../checkpoints")
 
     data = DataHolder('train')
 
