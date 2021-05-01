@@ -37,9 +37,8 @@
   color: lightgray;
 }
 
-.removeButton {
+.btn {
   border: none;
-  background-color: #db4650;
   border-radius: 10px;
   height: 8vmin;
   width: 18vmin;
@@ -48,18 +47,86 @@
   font-size: 20px;
   font-weight: 900;
   text-align: center;
+  padding: 10;
+  margin: 1em;
+  cursor: pointer;
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
 }
 
-.removeButton:hover {
+#removeBtn {
+  background-color: #db4650;
+}
+
+
+#removeBtn:hover {
   background-color: #db4f59;
 }
 
-.removeButton:active {
+#removeBtn:active {
   background-color: #c7444d;
 }
 
-#deleteIcon {
-  padding-top: 5px;
+#run {
+  background-color: #2f8248;
+}
+
+#run:hover {
+  background-color: #379152;
+}
+
+#run:active {
+  background-color: #256939;
+}
+
+.inlineButtons {
+  width: 100%;
+  height: min-content;
+  display: inline-block;
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+
+  text-align: center;
 }
 
 .filename {
@@ -70,6 +137,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.btnIcon {
+  padding: 5px;
 }
 
 .file-drop:before {

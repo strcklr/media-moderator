@@ -1,6 +1,7 @@
 import React, { Component, useRef, useState } from 'react';
 import { HiUpload } from 'react-icons/hi';
 import { TiDelete } from 'react-icons/ti';
+import { FaPlay } from 'react-icons/fa';
 import './App.css';
 import { FileDrop } from 'react-file-drop';
 
@@ -30,6 +31,10 @@ function App () {
     setUploadText("Drag and drop a file to be scanned. Click to browse.");
   }
 
+  var processFile = () => {
+    // TODO pass the file off to the model to be predicted
+  }
+
   var onFileInputChange = (event) => {
     const { files } = event.target;
     handleFileUpload(files);
@@ -39,7 +44,10 @@ function App () {
     if (!haveFile) {
       return <HiUpload className='upload'/>
     } else {
-      return <button className="removeButton" onClick={removeFile}><span className="filename">{filename}</span> <TiDelete id="deleteIcon"/></button>
+      return <div className="inlineButtons">
+        <button className="btn" id="removeBtn" onClick={removeFile}><span className="filename">{filename}</span> <TiDelete className="btnIcon"/></button>
+        <button className="btn" id="run" onClick={processFile}>RUN<FaPlay className="btnIcon"/></button>
+      </div>
     }
   }
 
@@ -47,7 +55,7 @@ function App () {
     <div className="App">
       <header className="banner">
         <h1 id='title'>Media Moderator</h1>
-        <h4 id='subtitle'>View content with confidence</h4>
+        <h4 id='subtitle'>Upload an mp4 to be scrubbed</h4>
         <div className="fileDrop">
           <FileDrop
             onTargetClick={onTargetClick}
