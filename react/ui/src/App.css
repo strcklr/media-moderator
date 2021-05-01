@@ -32,8 +32,8 @@
 }
 
 .upload {
-  height: 5vmin;
-  width: 5vmin;
+  height: 8vmin;
+  width: 8vmin;
   color: lightgray;
 }
 
@@ -143,7 +143,19 @@
   padding: 5px;
 }
 
-.file-drop:before {
+.input {
+  height: 40px;
+  width: 50%;
+  font-family: Open-Sans, sans-serif;
+  padding: 5px;
+  margin: 15px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  z-index: 99;
+}
+
+.fileDrop:before {
   content: "";
   position: absolute;
   border: 10px dashed #30528a;
@@ -172,13 +184,14 @@
   font-size: 20px;
   font-family: Open-Sans;
   font-weight: 100px;
-  width: 1000px;
+  width: 75%;
   min-height: 20vh;
   padding: 20;
 
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 1;
 }
 
 
@@ -223,6 +236,7 @@
   text-align: center;
   height: 100%;
   width: 100%;
+  z-index: 45;
 }
 
 .file-drop > .file-drop-target.file-drop-dragging-over-target {

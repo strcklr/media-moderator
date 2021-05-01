@@ -1,8 +1,9 @@
-import React, { Component, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
+import './App.css';
+import ytdl from 'react-native-ytdl';
 import { HiUpload } from 'react-icons/hi';
 import { TiDelete } from 'react-icons/ti';
 import { FaPlay } from 'react-icons/fa';
-import './App.css';
 import { FileDrop } from 'react-file-drop';
 
 function App () {
@@ -33,6 +34,16 @@ function App () {
 
   var processFile = () => {
     // TODO pass the file off to the model to be predicted
+    console.log(file);
+  }
+
+  async function processURL () {
+    const url = document.getElementById('url').value;
+    if (url.includes('youtube.com')) { // TODO Make more robust
+      /* Process YouTube URL */
+      const urls = await ytdl.getBasicInfo(url);
+      console.log(urls);
+    }
   }
 
   var onFileInputChange = (event) => {
@@ -51,11 +62,22 @@ function App () {
     }
   }
 
+  function getURLInput() {
+    if (!haveFile) {
+      return <div className="inlineButtons">
+        <input className="input" id="url" type="url" placeholder="Paste a URL (ex: https://youtube.com/...)" onClick={console.log("click")}></input>
+        <button className="btn" id="run" onClick={processURL}>RUN<FaPlay className="btnIcon"/></button>
+
+      </div>
+    }
+  }
+
   return (
     <div className="App">
       <header className="banner">
         <h1 id='title'>Media Moderator</h1>
         <h4 id='subtitle'>Upload an mp4 to be scrubbed</h4>
+        {getURLInput()}
         <div className="fileDrop">
           <FileDrop
             onTargetClick={onTargetClick}
@@ -68,7 +90,7 @@ function App () {
               console.log('onDrop!', files, event);
               console.log(files);
               handleFileUpload(files);
-            }}>
+            }}>      
             {getUploadIcon()}
             <p id="fileDropInstruction">{uploadText}</p>
             <input
@@ -76,7 +98,7 @@ function App () {
               ref={fileInputRef}
               type="file"
               className="hidden"
-            />
+            />      
           </FileDrop>
         </div>
       </header>
