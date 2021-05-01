@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mp4-content-moderator/static/css/main.19785919.chunk.css",
-    "main.js": "/mp4-content-moderator/static/js/main.d5cc786b.chunk.js",
-    "main.js.map": "/mp4-content-moderator/static/js/main.d5cc786b.chunk.js.map",
-    "runtime-main.js": "/mp4-content-moderator/static/js/runtime-main.c93ab5ab.js",
-    "runtime-main.js.map": "/mp4-content-moderator/static/js/runtime-main.c93ab5ab.js.map",
-    "static/js/2.49c68468.chunk.js": "/mp4-content-moderator/static/js/2.49c68468.chunk.js",
-    "static/js/2.49c68468.chunk.js.map": "/mp4-content-moderator/static/js/2.49c68468.chunk.js.map",
-    "static/js/3.2e116800.chunk.js": "/mp4-content-moderator/static/js/3.2e116800.chunk.js",
-    "static/js/3.2e116800.chunk.js.map": "/mp4-content-moderator/static/js/3.2e116800.chunk.js.map",
+    "main.css": "/mp4-content-moderator/static/css/main.d3bfabcc.chunk.css",
+    "main.js": "/mp4-content-moderator/static/js/main.19fdb6dc.chunk.js",
+    "main.js.map": "/mp4-content-moderator/static/js/main.19fdb6dc.chunk.js.map",
+    "runtime-main.js": "/mp4-content-moderator/static/js/runtime-main.4046bf59.js",
+    "runtime-main.js.map": "/mp4-content-moderator/static/js/runtime-main.4046bf59.js.map",
+    "static/js/2.8fa2bf2c.chunk.js": "/mp4-content-moderator/static/js/2.8fa2bf2c.chunk.js",
+    "static/js/2.8fa2bf2c.chunk.js.map": "/mp4-content-moderator/static/js/2.8fa2bf2c.chunk.js.map",
+    "static/js/3.03fc896b.chunk.js": "/mp4-content-moderator/static/js/3.03fc896b.chunk.js",
+    "static/js/3.03fc896b.chunk.js.map": "/mp4-content-moderator/static/js/3.03fc896b.chunk.js.map",
     "index.html": "/mp4-content-moderator/index.html",
-    "static/css/main.19785919.chunk.css.map": "/mp4-content-moderator/static/css/main.19785919.chunk.css.map",
-    "static/js/2.49c68468.chunk.js.LICENSE.txt": "/mp4-content-moderator/static/js/2.49c68468.chunk.js.LICENSE.txt",
+    "static/css/main.d3bfabcc.chunk.css.map": "/mp4-content-moderator/static/css/main.d3bfabcc.chunk.css.map",
+    "static/js/2.8fa2bf2c.chunk.js.LICENSE.txt": "/mp4-content-moderator/static/js/2.8fa2bf2c.chunk.js.LICENSE.txt",
     "static/media/App.css": "/mp4-content-moderator/static/media/OpenSans-Regular.1b0809d5.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.c93ab5ab.js",
-    "static/js/2.49c68468.chunk.js",
-    "static/css/main.19785919.chunk.css",
-    "static/js/main.d5cc786b.chunk.js"
+    "static/js/runtime-main.4046bf59.js",
+    "static/js/2.8fa2bf2c.chunk.js",
+    "static/css/main.d3bfabcc.chunk.css",
+    "static/js/main.19fdb6dc.chunk.js"
   ]
 }
