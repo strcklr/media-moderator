@@ -1,6 +1,6 @@
 {
   "name": "ui",
-  "homepage": "https://strcklr.github.io/mp4-content-moderator/",
+  "homepage": "https://strcklr.github.io/media-moderator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
