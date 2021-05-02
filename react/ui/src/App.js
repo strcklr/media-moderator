@@ -18,6 +18,10 @@ function App () {
   const [file, setFile] = useState(null);
   const [filename, setFileName] = useState("unknown.mp4");
 
+  const VIDEO_URL = "http://localhost:8082/get-video-info?video_id=";
+  const validateYTUrl = url => /^(?:https?:\/\/)?(w{3})?\.?youtube\.com/.test(url);
+
+
   var handleFileUpload = (files) => {
     setFile(files[0]);
     setFileName(files[0].name);
@@ -39,11 +43,28 @@ function App () {
 
   async function processURL () {
     const url = document.getElementById('url').value;
-    if (url.includes('youtube.com')) { // TODO Make more robust
+    if (validateYTUrl(url)) { // TODO Make more robust
       /* Process YouTube URL */
-      const urls = await ytdl.getBasicInfo(url);
-      console.log(urls);
+      const videoId = url.split("?")[1].match(/v=([^&]+)/)[1];
+      return fetch(VIDEO_URL + videoId)
+        .then(res => res.text())
+        .then(res => {
+          return qsToJson(res);
+        });
     }
+  }
+
+  function qsToJson(queryString) {
+    let res = {};
+    let params = queryString.split("&");
+    let keyValuePair, key, value;
+    for (let i in params) {
+      keyValuePair = params[i].split("=");
+      key = keyValuePair[0];
+      value = keyValuePair[1];
+      res[key] = decodeURIComponent(value);
+    }
+    return res;
   }
 
   var onFileInputChange = (event) => {
