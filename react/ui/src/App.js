@@ -42,7 +42,7 @@ function App () {
   }
 
   async function processURL () {
-    const server = require('child_process').fork('./start_server.sh');
+    // const server = require('child_process').fork('./start_server.sh');
     const url = document.getElementById('url').value;
     if (validateYTUrl(url)) {
       /* Process YouTube URL */
