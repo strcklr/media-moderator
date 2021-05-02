@@ -62,13 +62,9 @@ function App () {
     if (confidence >= 90) {
       return { border: '3px solid #379152' };
     } else if (confidence < 90 && confidence >= 70) {
-      return { 
-        border: '3px solid yellow' 
-      };
+      return { border: '3px solid yellow' };
     } else {
-      return { 
-        border: '3px solid #db4650',
-      };
+      return { border: '3px solid #db4650' };
     }
   }
 
