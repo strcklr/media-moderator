@@ -3,11 +3,12 @@ let API_SERVER_VAL = '';
 switch(!process.env.NODE_ENV) {
     case 'production':
         API_SERVER_VAL = process.env.REACT_APP_API_SERVER;
+        break;
     case 'development':
-        API_SERVER_VAL = 'http://localhost:8100';
+        API_SERVER_VAL = 'http://127.0.0.1';
         break;
     default:
-        API_SERVER_VAL = 'http://localhost:8100';
+        API_SERVER_VAL = 'http://127.0.0.1';
         break;
 }
 

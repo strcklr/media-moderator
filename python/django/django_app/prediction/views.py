@@ -84,7 +84,7 @@ class MediaPredict(APIView):
             return Response(res, status=200)
         except Exception as e:
             print(e)
-            return Response({"Error": "Exception was thrown!"}, status=500)
+            # return Response({"Error": "Exception was thrown!"}, status=500)
 
     def get_score_and_label(self, prediction):
         score = tf.nn.softmax(prediction[0])
