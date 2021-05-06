@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+  django:
+    build:
+      context: ./python/django
+      dockerfile: Dockerfile
+    volumes:
+      - django_static_volume:/usr/src/app/static
+    expose:
+      - 8000
+    env_file:
+      - ./python/django/.env
+    command: gunicorn mainapp.wsgi:application --bind 0.0.0.0:8000 --timeout 6000
+    depends_on:
+      - db
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./postgres/.env
+  react:
+    build:
+      context: ./react
+      dockerfile: Dockerfile
+      args:
+        - API_SERVER=${ENV_API_SERVER}
+    volumes:
+      - '.:/app'
+      - react_static_volume:/usr/src/app/build/static
+      - modules:/usr/src/app/node_modules
+#      - '/usr/src/app/node_modules'
+    expose:
+      - 3000
+    env_file:
+      - .env
+    command: serve -s build -l 3000
+    depends_on:
+      - django
+
+  nginx:
+    restart: always
+    build: ./nginx
+    volumes:
+      - django_static_volume:/usr/src/app/django_files/static
+      - react_static_volume:/usr/src/app/react_files/static
+    ports:
+      - 80:80
+    depends_on:
+      - react
+
+volumes:
+  postgres_data:
+  django_static_volume:
+  react_static_volume:
+  modules:
