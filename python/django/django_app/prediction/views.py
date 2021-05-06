@@ -108,7 +108,7 @@ class MediaPredict(APIView):
 
         predictions = self.model.predict(img_array)
 
-        (score, label) = self.get_score_and_label(predictions)
+        (score, label, frame) = self.get_score_and_label(predictions)
 
         msg = "This image likely belongs to {} with a {:.2f} percent confidence.".format(label, score)
         print(msg)
@@ -138,9 +138,6 @@ class MediaPredict(APIView):
         start = time.time()
 
         while True:
-            # grabbed, frame = (None, None)
-
-            # for i in range(0, 4):  # Skip 4 frames to speed up processing time
             (grabbed, frame) = video_stream.read()
 
             if not grabbed:
@@ -154,9 +151,9 @@ class MediaPredict(APIView):
 
             preds = self.model.predict(np.expand_dims(frame, axis=0))
 
-            (score, label, index) = self.get_score_and_label(preds)
+            (score, label, frame_number) = self.get_score_and_label(preds)
 
-            predictions.append((label, score, index))
+            predictions.append((label, score, frame_number))
 
             self.get_contextual_label(q, label)
 
@@ -171,6 +168,7 @@ class MediaPredict(APIView):
 
         return Response({
             "message": msg,
+            "duration": format(end - start, '.2f'),
             "predictions": predictions,
         }, status=200)
 
