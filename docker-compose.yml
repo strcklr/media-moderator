@@ -11,7 +11,7 @@ services:
       - 8000
     env_file:
       - ./python/django/.env
-    command: gunicorn mainapp.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn mainapp.wsgi:application --bind 0.0.0.0:8000 --timeout 6000
     depends_on:
       - db
   db:
