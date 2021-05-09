@@ -1,10 +1,51 @@
-# mp4-content-moderator
+# Media Moderator
 
-NOTE: This repository DOES NOT contain any NSFW content, besides some language used as categorization for the model.
+This project uses machine learning to to determine if a file contains anything NSFW. NOTE: This repository DOES NOT contain any NSFW content, besides some language used as categorization for the model.
 
-This project scrubs an mp4 to determine if the video contains anything NSFW, with the goal of it eventually having a frontend component that would allow a user to drag and drop a video to be scrubbed. 
+## Requirements
 
-The goal of this project will be to introduce myself to commonly used cloud technologies (AWS EC2, GCP, Docker, etc.) as well as familiarize myself with common machine learning paradigms.
+This project uses Docker to build and run each service.
 
-The dataset used for this project is from [this repository](https://github.com/strcklr/nsfw_data_scraper) (NOTE: this obviously contains NSFW language). All of the data has been uploaded to Google Cloud Storage and should be streamed directly from there when training the model.
+- [Docker](https://docs.docker.com/get-docker/)
+
+### Requirements for Building Services Without Docker
+
+Each service can also be run individually, but have the following requirements respectively:
+
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Node.js](https://nodejs.org/en/)
+- [Python3](https://www.python.org/downloads/)
+- [Django](https://www.djangoproject.com/download/)
+
+## Usage
+
+Docker is used to run each service in parallel. After cloning the repository and navigating to the project's root, run the following command:
+
+```bash
+docker-compose up -d
+```
+
+Then, navigate to 127.0.0.1 to see the home page. The URL to the prediction API is 127.0.0.1/api/predict/. I use [Postman](https://www.postman.com/) to do local API testing.
+
+To shutdown the Docker network, run the following command:
+
+```bash
+docker-compose down
+```
+
+If you would like to rebuild a single service in the network, run the following command:
+
+```bash
+docker-compose build [SERVICE]
+docker-compose up -d
+```
+
+NOTE: Rebuilding the React app after creating the services using Docker compose can cause the page to display a white screen. This is due to the Nginx web server and the React app having a shared volume and can be remedied with the following command:
+
+```bash
+docker volume rm $(docker volume ls -q)
+```
+
+See [docker-compose documentation for more information.](https://docs.docker.com/compose/)
+
 

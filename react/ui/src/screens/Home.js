@@ -66,25 +66,6 @@ function Home () {
 
       );
 
-    
-    // let form = new FormData();
-    // form.append('file', file);
-
-    // let headers = { 'Content-Type' : 'multipart/form-data'};
-    // let url = settings.API_SERVER + '/api/predict/';
-    // let method = 'post';
-    // let config = { headers, method, url, data: form};
-
-
-    // axios.post
-
-    // axios(config).then(
-    //   res => {
-    //     console.log(res.data)
-    //     setResponse(res);
-    //   }).catch(
-    //     error => {alert(error)}
-    //   );
   }
 
   var predictionBorderStyle = (confidence) => {
@@ -151,10 +132,9 @@ function Home () {
   }
 
   function getContentArea() {
-    return getLoadingIndicator();
     if (response == null && !uploading) {
       return getFileDropper();
-    } else if (uploading) {
+    } else if (uploading || awaitingResponse) {
       return getLoadingIndicator();
     } else {
       return getPredictionView();
