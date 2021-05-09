@@ -4,7 +4,11 @@ This directory contains the backend for the project. It utilizes a RESTful API t
 
 The backend is currently in it's very early stages and needs some cleaning up and design work. Eventually, I would like the API flow to look a bit like this:
 
-> Backend: Receives file via POST -> Respond with unique token and status 200 -> Spin up progress page for request at <URL>/api/predict/<TOKEN> -> Begin prediction process
+### Backend
+> Receives file via POST -> Respond with unique token and status 200 -> Spin up progress page for request at /api/predict/{TOKEN} -> Begin prediction process
+
+### Frontend
+> POST file to server -> On 200, indicate upload success and parse unique token from response -> Perform GET at /api/predict/{TOKEN} on interval to retrieve prediction progress -> On complete, GET results and display
 
 ## Requirements
 
