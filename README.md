@@ -1,6 +1,8 @@
 # Media Moderator
 
-This project uses machine learning to to determine if a file contains anything NSFW. NOTE: This repository DOES NOT contain any NSFW content, besides some language used as categorization for the model.
+This project uses machine learning to to determine if a file contains anything NSFW. 
+
+NOTE: This repository DOES NOT contain any NSFW content, besides some language used as categorization for the model.
 
 ## Requirements
 
