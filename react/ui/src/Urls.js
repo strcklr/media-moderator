@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Home from "./Home";
+import Home from "./screens/Home";
 import Index from "./index";
 
 function Urls(props) {
