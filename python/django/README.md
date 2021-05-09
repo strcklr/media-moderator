@@ -22,6 +22,29 @@ python3 --version
 
 Additionally, the backend depends on [PostgreSQL](https://www.postgresql.org/). Once downloaded, using PGAdmin create a new database and user, then update the source code to reflect that.
 
+### Environment File
+
+To use this project with Docker, you'll need to create your own .env files. On the same level as this README, create a .env file with the following definitions:
+
+```bash
+DJANGO_ENV=[production/development]
+DEBUG=[0 or 1]
+SECRET_KEY=[SECRET KEY]
+DJANGO_ALLOWED_HOSTS=[www.example.com localhost 127.0.0.1 [::1]]
+
+DJANGO_ADMIN_USER=[USER]
+DJANGO_ADMIN_EMAIL=[EMAIL]
+DJANGO_ADMIN_PASSWORD=[PASSWORD]
+
+DATABASE=postgres
+
+DB_ENGINE=django.db.backends.postgresql
+DB_DATABASE=[DATABASE]
+DB_USER=[USER]
+DB_PASSWORD=[PASSWORD]
+DB_HOST=[HOST]
+DB_PORT=[PORT]
+```
 
 ## Installation
 

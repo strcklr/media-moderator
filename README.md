@@ -19,6 +19,16 @@ Each service can also be run individually, but have the following requirements r
 - [Python3](https://www.python.org/downloads/)
 - [Django](https://www.djangoproject.com/download/)
 
+### Environment Files
+
+To use this project with Docker, you'll need to create your own .env files. On the same level as this README, create a .env file with the following definitions:
+
+```bash
+ENV_API_SERVER=[Domain name or http://127.0.0.1]
+```
+
+For instructions on a service's .env file requirements, see the service-level README.md.
+
 ## Usage
 
 Docker is used to run each service in parallel. After cloning the repository and navigating to the project's root, run the following command:
