@@ -1,0 +1,367 @@
+.Home {
+  text-align: center;
+  background-color: #1b1f26;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+    margin: 0;
+}
+
+.uploadProgress {
+  height: 2em;
+  min-height: 60%;
+  width: 60%;
+  min-width: 60%;
+  z-index: 100;
+}
+
+Spinner {
+  width: 10em;
+  height: 10em;
+  min-height: 3em;
+  color: green;
+  z-index: 100;
+}
+
+.banner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#title {
+  font-family: Comfortaa, Open-Sans, sans-serif;
+  font-size: 3em;
+  height: min-content;
+  margin: 0;
+}
+
+#subtitle {
+  font-family: Open-Sans;
+  font-weight: 100;
+  font-style: italic;
+  margin: 2vmin;
+  margin-bottom: 5vmin;
+}
+
+.upload {
+  height: 8vmin;
+  width: 8vmin;
+  color: lightgray;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  height: 8vmin;
+  width: 18vmin;
+  color: white;
+  font-family: Open-Sans;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10;
+  margin: 1em;
+  cursor: pointer;
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+}
+
+#removeBtn {
+  background-color: #db4650;
+}
+
+
+#removeBtn:hover {
+  background-color: #db4f59;
+}
+
+#removeBtn:active {
+  background-color: #c7444d;
+}
+
+#run {
+  background-color: #2f8248;
+}
+
+#run:hover {
+  background-color: #379152;
+}
+
+#run:active {
+  background-color: #256939;
+}
+
+.inlineButtons {
+  width: 100%;
+  height: min-content;
+  display: inline-block;
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+
+  text-align: center;
+}
+
+.filename {
+  text-align: center;
+  max-width: 70%;
+  max-height: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btnIcon {
+  padding: 5px;
+}
+
+.input {
+  height: 40px;
+  width: 50%;
+  font-family: Open-Sans, sans-serif;
+  padding: 5px;
+  margin: 15px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  z-index: 99;
+}
+
+.imagePrediction {
+  display: inline-block;
+  position: relative;
+
+  border-radius: 8px;
+  background-color: #2f343d;
+  font-size: 20px;
+  font-family: Open-Sans;
+  font-weight: 100px;
+  min-height: 20vh;
+  padding: 20px;
+
+  display: inline-block;
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+}
+
+.imgSource {
+  border: 3px solid #379152;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  /* height: 10px;
+  width: 400px;
+  margin: -100px, 0px, 0px, -300px; */
+}
+
+.predictionColumn {
+  text-align: left;
+  margin: 3em;
+}
+
+#clear {
+  background-color: #db4650;
+}
+
+.fileDrop:before {
+  content: "";
+  position: absolute;
+  border: 10px dashed #30528a;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px;;
+}
+
+.file-drop > .file-drop-target.file-drop-dragging-over-frame:before {
+  content: "";
+  position: absolute;
+  border: 10px dashed #699ef5;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px;;
+}
+
+.fileDrop {
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 8px;
+  background-color: #2f343d;
+  font-size: 20px;
+  font-family: Open-Sans;
+  font-weight: 100px;
+  width: 75%;
+  min-height: 20vh;
+  padding: 20;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+
+.file-drop {
+  position: relative;
+  color: lightgrey;
+  font-weight: lighter;;
+  height: 300px;
+  width: 100%;
+}
+
+.file-drop > .file-drop-target {
+  position: absolute;
+  border-radius: 2px;
+
+  /* center content */
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  z-index: 45;
+}
+
+.file-drop > .file-drop-target.file-drop-dragging-over-target {
+  background-color: #4c5159;
+  box-shadow: none;
+  z-index: 50;
+  opacity: 1;
+
+  color: #699ef5;
+  box-shadow: 0 0 13px 3px black;
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none
+}
+
+@font-face {
+  font-family: 'Expletus-Sans';
+  src: local('Expletus'), url(./../fonts/ExpletusSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Megrim';
+  src: local('Megrim'), url(./../fonts/Megrim-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url(./../fonts/Comfortaa-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'), url(./../fonts/OpenSans-LightItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Light.ttf) format('truetype');
+}

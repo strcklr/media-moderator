@@ -3,14 +3,14 @@ version: "3.7"
 services:
   django:
     build:
-      context: ./python/django
+      context: ./backend
       dockerfile: Dockerfile
     volumes:
       - django_static_volume:/usr/src/app/static
     expose:
       - 8000
     env_file:
-      - ./python/django/.env
+      - ./backend/.env
     command: gunicorn mainapp.wsgi:application --bind 0.0.0.0:8000 --timeout 6000
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
       - ./postgres/.env
   react:
     build:
-      context: ./react
+      context: ./frontend
       dockerfile: Dockerfile
       args:
         - API_SERVER=${ENV_API_SERVER}
