@@ -134,8 +134,6 @@ function Home () {
   function getContentArea() {
     if (response == null && !uploading) {
       return getFileDropper();
-    } else if (uploading || awaitingResponse) {
-      return getLoadingIndicator();
     } else {
       return getPredictionView();
     }

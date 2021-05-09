@@ -18,6 +18,7 @@ Each service can also be run individually, but have the following requirements r
 - [Node.js](https://nodejs.org/en/)
 - [Python3](https://www.python.org/downloads/)
 - [Django](https://www.djangoproject.com/download/)
+- [NGINX](https://www.nginx.com/)
 
 ### Environment Files
 
@@ -52,12 +53,16 @@ docker-compose build [SERVICE]
 docker-compose up -d
 ```
 
-NOTE: Rebuilding the React app after creating the services using Docker compose can cause the page to display a white screen. This is due to the Nginx web server and the React app having a shared volume and can be remedied with the following command:
+NOTE: Rebuilding the React app after creating the services using Docker compose can cause the page to display a white screen. This is due to the Nginx web server and the React app having a shared static volume that doesn't get updated on rebuild, and can be remedied with the following command:
+
+```bash
+docker volume rm mp4-content-moderator_react_static_volume
+```
+
+If that doesn't work, you can wipe all volumes:
 
 ```bash
 docker volume rm $(docker volume ls -q)
 ```
 
 See [docker-compose documentation for more information.](https://docs.docker.com/compose/)
-
-
