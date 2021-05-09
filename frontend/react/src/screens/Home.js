@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react';
-import './../styles/App.css';
-// import axios from 'axios';
+import '../styles/App.css';
 import UploadFilesService from '../services/upload-file.service'
-import * as settings from '../util/settings';
 import { HiUpload } from 'react-icons/hi';
 import { TiDelete } from 'react-icons/ti';
 import { FaPlay } from 'react-icons/fa';
 import { FileDrop } from 'react-file-drop';
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
 
 function Home () {
   const fileInputRef = useRef(null);
@@ -187,9 +185,16 @@ function Home () {
       <header className="banner">
         <h1 id='title'>Media Moderator</h1>
         <h4 id='subtitle'>Upload an mp4 to be scrubbed</h4>
-        {getURLInput()}
-        {getContentArea()}
       </header>
+      <body className="content">
+        <div className="content">
+          {getURLInput()}
+          {getContentArea()}         
+        </div>
+      </body>
+      <footer>
+        {/* TODO add footer */}
+      </footer>
     </div>
   );
 }

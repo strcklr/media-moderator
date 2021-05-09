@@ -1,4 +1,8 @@
 body {
-    padding: 0;
-    margin: 0;
+    background-color: #1b1f26;
+}
+
+#nav {
+    width: min-content;
+    float: right;
 }
