@@ -1,13 +1,29 @@
 .Home {
   text-align: center;
   background-color: #1b1f26;
-    margin: 0;
+  margin: 0;
   width: 100%;
   height: 100%;
 }
 
 .App {
     margin: 0;
+}
+
+.uploadProgress {
+  height: 2em;
+  min-height: 60%;
+  width: 60%;
+  min-width: 60%;
+  z-index: 100;
+}
+
+Spinner {
+  width: 10em;
+  height: 10em;
+  min-height: 3em;
+  color: green;
+  z-index: 100;
 }
 
 .banner {
@@ -317,35 +333,35 @@
 
 @font-face {
   font-family: 'Expletus-Sans';
-  src: local('Expletus'), url(./fonts/ExpletusSans-Regular.ttf) format('truetype');
+  src: local('Expletus'), url(./../fonts/ExpletusSans-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Megrim';
-  src: local('Megrim'), url(./fonts/Megrim-Regular.ttf) format('truetype');
+  src: local('Megrim'), url(./../fonts/Megrim-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Comfortaa';
-  src: local('Comfortaa'), url(./fonts/Comfortaa-VariableFont_wght.ttf) format('truetype');
+  src: local('Comfortaa'), url(./../fonts/Comfortaa-VariableFont_wght.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Open-Sans';
-  src: local('Open-Sans'), url(./fonts/OpenSans-Regular.ttf) format('truetype');
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Open-Sans';
-  src: local('Open-Sans'), url(./fonts/OpenSans-Italic.ttf) format('truetype');
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Italic.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Open-Sans';
-  src: local('Open-Sans'), url(./fonts/OpenSans-LightItalic.ttf) format('truetype');
+  src: local('Open-Sans'), url(./../fonts/OpenSans-LightItalic.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Open-Sans';
-  src: local('Open-Sans'), url(./fonts/OpenSans-Light.ttf) format('truetype');
+  src: local('Open-Sans'), url(./../fonts/OpenSans-Light.ttf) format('truetype');
 }
