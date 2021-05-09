@@ -131,3 +131,13 @@ dmypy.json
 # Tensorflow
 python/checkpoints/
 python/model/
+
+# Node
+node_modules/
+
+# JetBrains
+.idea/
+
+# Moderator
+python/moderator/example/
+python/moderator/checkpoints/
