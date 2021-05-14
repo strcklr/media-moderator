@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-from python.dataholder import DataHolder
+from dataholder import DataHolder
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
@@ -12,7 +12,9 @@ def train():
     if not os.path.isdir("../checkpoints"):
         os.mkdir("../checkpoints")
 
-    data = DataHolder('train')
+    data = DataHolder('/Users/chase/Documents/Repositories/nsfw_data_scraper/data/train')
+
+    return
 
     batch_size = 32
     img_height = 180

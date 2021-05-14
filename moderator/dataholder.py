@@ -1,15 +1,15 @@
 import pathlib
 
-CLASS_NAMES = ["hentai", "porn", "neutral"]
+CLASS_NAMES = ["hentai", "porn", "neutral", "drawings", "sexy"]
 CLASS_NAMES.sort()  # Alphabetical
 
 class DataHolder:
     root = None
     data_dir = None
-    # drawings = None
+    drawings = None
     hentai = None
     porn = None
-    # sexy = None
+    sexy = None
     neutral = None
 
     train_set = None
@@ -20,10 +20,10 @@ class DataHolder:
         self.data_dir = pathlib.Path(path)
         print("Total images: %d" % len(list(self.data_dir.glob('*/*.jpg'))))
 
-        # self.drawings = self.gather_images("drawings")
+        self.drawings = self.gather_images("drawings")
         self.hentai = self.gather_images("hentai")
         self.porn = self.gather_images("porn")
-        # self.sexy = self.gather_images("sexy")
+        self.sexy = self.gather_images("sexy")
         self.neutral = self.gather_images("neutral")
 
     def gather_images(self, dir_name):
