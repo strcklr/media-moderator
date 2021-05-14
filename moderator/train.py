@@ -12,11 +12,9 @@ def train():
     if not os.path.isdir("../checkpoints"):
         os.mkdir("../checkpoints")
 
-    data = DataHolder('/Users/chase/Documents/Repositories/nsfw_data_scraper/data/train')
+    data = DataHolder('S://data/train')
 
-    return
-
-    batch_size = 32
+    batch_size = 1000
     img_height = 180
     img_width = 180
 

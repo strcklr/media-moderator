@@ -1,4 +1,4 @@
-import tensorflow.compat.v1 as tf
+import tensorflow._api.v2.compat.v1 as tf
 import numpy as np
 import cv2
 import os
@@ -6,7 +6,8 @@ import psutil
 import multiprocessing as mp
 from tqdm import tqdm
 
-LOCAL_DATA_PATH = "/Users/chase/Documents/Repositories/nsfw_data_scraper/data/"
+LOCAL_DATA_PATH = "S://data/"
+OUTPUT_DIR = "G://tfrecords/"
 GCS_BASE_URL = "gs://content_moderator_db/data/"
 CLASS_NAMES = ["hentai", "porn", "neutral", "drawings", "sexy"]
 label_map = {
@@ -57,11 +58,12 @@ def process_write(paths, labels, split, max_bytes, process_id):
     shard_count, i = 0, 0
     n_examples = len(paths)
 
-    if not os.path.isdir('data/%s' % split):
-        os.mkdir('data/%s' % split)
+
+    if not os.path.isdir('%s%s' % (OUTPUT_DIR, split)):
+        os.mkdir('%s%s' % (OUTPUT_DIR, split))
 
     while i != n_examples:
-        output_file_path = 'data/{split}/{process_id}-shard{shard}.tfrecords'.format(split=split, process_id=process_id, \
+        output_file_path = '{path}/{split}/{process_id}-shard{shard}.tfrecords'.format(path=OUTPUT_DIR,split=split, process_id=process_id, \
                                                                                      shard=shard_count)
 
         with tf.python_io.TFRecordWriter(output_file_path) as writer:
@@ -94,8 +96,8 @@ def split2records(paths, labels, split, max_bytes=1e9):
     # if factor = 1 it can go up to ~11sec/iteration (really slow)
     # larger value = faster single processes but more shutdown/startup time
     # smaller value = slower single process but less shutdown/startup time
-    factor = 90
-    n_processes = psutil.cpu_count()
+    factor = 70
+    n_processes = psutil.cpu_count() - 3
     print('Using {} processes...'.format(n_processes))
 
     path_split = np.array_split(paths, factor)
@@ -159,6 +161,6 @@ def gather_paths(split):
 
 
 if __name__ == '__main__':
-    split = 'train'
-    files, labels = gather_paths(split)
-    split2records(files, labels, split)
+    for split in ['train', 'test']:
+        files, labels = gather_paths(split)
+        split2records(files, labels, split)

@@ -54,3 +54,4 @@ class DataHolder:
             print('Bad file: %s, removing...' % file)
             os.remove(file)
             return False
+            
