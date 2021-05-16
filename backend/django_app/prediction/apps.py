@@ -10,11 +10,8 @@ class PredictionConfig(AppConfig):
     name = 'prediction'
     img_height = 180
     img_width = 180
-    model_path = "prediction/model" # TODO fix this path
+    model_path = "prediction/model"
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     MODEL_FOLDER = os.path.join(BASE_DIR, model_path)
-
-    print("-------- FILES ---------")
-    print(os.listdir(BASE_DIR))
 
     model = keras.models.load_model(MODEL_FOLDER)

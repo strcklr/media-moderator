@@ -29,17 +29,27 @@ class DataHolder:
     def gather_images(self, dir_name):
         data = self.data_dir.glob(dir_name + "/*")
         print("%s%s: %d" % ("----- ", dir_name, len(list(data))))
-        self.clean_data(self.root + "/" + dir_name)
+        # self.clean_data(self.root + "/" + dir_name)
         return data
 
     def clean_data(self, dir):
         import os
-        print("Verifying data for %s" % dir)
+        import sys
         invalid = 0
+        i = 0
+        length = len(os.listdir(dir))
         for f in os.listdir(dir):
+            i += 1
+            percent = i/length * 100
+            bar_len = 100
+            bar = '*' * int(percent) + '.' * (bar_len - int(percent))
+            sys.stdout.write("\rProgress [{}] {:.2f}% - ".format(bar, percent))
+            sys.stdout.flush()
+
             filename = os.path.join(dir, f)
             if not self.validate_file(filename):
                 invalid += 1
+
         print("Total invalid: %d/%d" % (invalid, len(os.listdir(dir))))
 
     def validate_file(self, file):

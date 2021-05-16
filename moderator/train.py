@@ -6,17 +6,16 @@ import os
 from dataholder import DataHolder
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
+from keras.layers import Bidirectional, CuDNNLSTM
 
 
 def train():
     if not os.path.isdir("../checkpoints"):
         os.mkdir("../checkpoints")
 
-    data = DataHolder('/Users/chase/Documents/Repositories/nsfw_data_scraper/data/train')
+    data = DataHolder('S://data/train')
 
-    return
-
-    batch_size = 32
+    batch_size = 8
     img_height = 180
     img_width = 180
 
@@ -77,7 +76,7 @@ def train():
         layers.Dropout(0.2),
         layers.Flatten(),
         layers.Dense(128, activation='relu'),
-        layers.Dense(classes)
+        layers.Dense(classes),
     ])
 
     model.compile(optimizer='adam',
