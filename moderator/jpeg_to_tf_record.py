@@ -6,8 +6,8 @@ import psutil
 import multiprocessing as mp
 from tqdm import tqdm
 
-LOCAL_DATA_PATH = "/Users/chase/Documents/Repositories/nsfw_data_scraper/data/"
-GCS_BASE_URL = "gs://content_moderator_db/data/"
+LOCAL_DATA_PATH = "S://data/"
+GCS_BASE_URL = "gs://content_moderator_db/"
 CLASS_NAMES = ["hentai", "porn", "neutral", "drawings", "sexy"]
 label_map = {
     "drawings": 0,
@@ -57,11 +57,11 @@ def process_write(paths, labels, split, max_bytes, process_id):
     shard_count, i = 0, 0
     n_examples = len(paths)
 
-    if not os.path.isdir('data/%s' % split):
-        os.mkdir('data/%s' % split)
+    # if not os.path.isdir('data/%s' % split):
+    #     os.mkdir('data/%s' % split)
 
     while i != n_examples:
-        output_file_path = 'data/{split}/{process_id}-shard{shard}.tfrecords'.format(split=split, process_id=process_id, \
+        output_file_path = GCS_BASE_URL + 'tfrecords/data/{split}/{process_id}-shard{shard}.tfrecords'.format(split=split, process_id=process_id, \
                                                                                      shard=shard_count)
 
         with tf.python_io.TFRecordWriter(output_file_path) as writer:

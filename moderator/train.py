@@ -73,7 +73,7 @@ def train():
         layers.MaxPooling2D(),
         layers.Conv2D(64, 3, padding='same', activation='relu'),
         layers.MaxPooling2D(),
-        layers.Dropout(0.2),
+        layers.Dropout(0.4),
         layers.Flatten(),
         layers.Dense(128, activation='relu'),
         layers.Dense(classes),
@@ -97,7 +97,7 @@ def train():
     model.save_weights(checkpoint_path.format(epoch=0))
 
     # Train the model
-    epochs = 10
+    epochs = 25
     history = model.fit(
         data.train_set,
         validation_data=data.val_set,
